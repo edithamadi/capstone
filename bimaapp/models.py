@@ -12,3 +12,8 @@ class Profile(models.Model):
     cellphone = models.IntegerField()
     emailaddress =  models.EmailField(max_length=75)
 
+class Image(models.Model):
+    image = models.ImageField(upload_to='images/')
+    name = models.CharField(max_length=40)
+    description = models.TextField()
+    
