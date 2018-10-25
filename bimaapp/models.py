@@ -18,12 +18,52 @@ class Image(models.Model):
 
 class Proposer(models.Model):
     first_name = models.CharField(max_length=30)
-    surname_name = models.CharField(max_length=30)
+    surname = models.CharField(max_length=30)
     title = models.CharField(max_length=30)
-    dob =  = models.DateTimeField()
+    dateofbirth = models.DateTimeField()
     id_number = models.IntegerField()
     maritalstatus = models.CharField(max_length=30)
     cellphone = models.IntegerField()
     emailaddress =  models.EmailField(max_length=75)
     relationshiptoassured = models.CharField(max_length=30)
-    
+
+class Lifeassured(models.Model):
+    first_name = models.CharField(max_length=30)
+    surname = models.CharField(max_length=30)
+    title = models.CharField(max_length=30)
+    dateofbirth  = models.DateField()
+    nationality = models.CharField(max_length=30)
+    country = models.CharField(max_length=30)
+    agelastbirthday = models.CharField(max_length=30)
+    maritalstatus = models.CharField(max_length=30)
+    sex = models.CharField(max_length=30)
+
+class Address(models.Model):
+    residentialname = models.CharField(max_length=30)
+    workaddress = models.CharField(max_length=30)
+    businessemail = models.EmailField(max_length=75)
+
+class Occupation(models.Model):
+    occupationname = models.CharField(max_length=30)
+    annualincome = models.IntegerField()
+
+class premiumpaymethod(models.Model):
+    name = models.CharField(max_length = 100)
+    paymethod = (
+        ('Mpesa Paybill', 'Mpesa Paybill'),
+        ('Cheque Payments', 'Cheque Payments'),
+        ('Check-off', 'Check-off'),
+        ('Direct Debit', 'Direct Debit'),
+    )
+
+class Bankers_Order(models.Model):
+    bank_name = (
+        ('Equity Bank', 'Equity Bank'),
+        ('Standard Chartered Bank', 'Standard Chartered Bank'),
+        ('Kenya Commercial Bank', 'Kenya Commercial Bank'),
+        ('Barclays', 'Barclays'),
+    )
+    branch_name = name = models.CharField(max_length = 100)
+    account_name = models.PositiveIntegerField()
+    account_number = models.ForeignKey(User, on_delete=models.CASCADE)
+
