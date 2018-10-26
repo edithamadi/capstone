@@ -1,0 +1,48 @@
+{% extends 'all-insta/base.html' %}
+{% load bootstrap3 %}
+{% load static %}
+{% block content%}
+{{ block.super }}
+
+<div class="container-fluid" style="float:left; ">
+    <div class="row">
+
+            <div class="col-md-6">
+                    <h2 class="account-heading">{{ user.username }}</h2>
+
+                    {% if user.profile.profile_photo %}
+ 
+                <img class="rounded-circle account-img" style="border-radius:50%;height:200px; width:200px;" src="{{ user.profile.profile_photo.url }}">
+                {% endif %} 
+                                    <p><b>Bio: </b>{{user.profile.bio}}</p>
+                                    <p class="text-secondary"><b>Email: </b>{{ user.email }}</p>
+                                    <p><b>Marital Status: </b>{{user.profile.maritalstatus}}</p>
+                                    <p><b>Cell Phone: </b>{{user.profile.cellphone}}</p>
+            </div>
+
+            
+        </div>
+
+    </div>
+
+<style>
+.btnBlueGreen {
+  background: #00AE68;
+}
+.button {
+  display: block;
+  position: relative;
+  float: left;
+  width: 120px;
+  padding: 0;
+  margin: 10px 20px 10px 0;
+  font-weight: 600;
+  text-align: center;
+  line-height: 50px;
+  color: #FFF;
+  border-radius: 5px;
+  transition: all 0.2s ;
+}
+</style>
+
+{% endblock %}

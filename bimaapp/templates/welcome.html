@@ -1,3 +1,28 @@
 {%extends 'all-bimaapp/base.html'%}
+{% load bootstrap4 %}
+{% block content %} 
+<div class="container">
+  <h2><i>Welcome to the Bima Assurance</i></h2>
 
-<h1>Welcome to the Bima Assurance</h1>
+  {% for image in images  %}
+
+  <div class="row">
+      <h1 class="text-center">{{image.name}}</h1>
+    </div>
+ 
+  
+  <div class="row">
+    <img src="{{image.image.url}}"  class="img-responsive" alt="">
+  </div>
+
+  
+  <div class="row">
+    <p>{{image.description}}</p>
+  </div>     
+
+  {%endfor%}
+
+
+{% endblock %}
+</div>
+

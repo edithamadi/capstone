@@ -1,0 +1,26 @@
+{% block content%}
+{% if proposer %}
+{% for pic in proposer %}
+
+<h2>PROPOSER INFORMATION</h2><br><br>
+      <b>First Name: </b> {{pic.first_name}}<br><br>
+      <b>Surname: </b> {{pic.surname}}<br><br>
+      <b>Title: </b> {{pic.title}}<br><br>
+      <b>Date of Birth: </b>{{pic.dateofbirth}}<br><br>
+      <b>ID Number: </b>{{pic.id_number}}<br><br>
+      <b>Marital status: </b>{{pic.maritalstatus}}<br><br>
+      <b>Cell Phone: </b>{{pic.cellphone}}<br><br>
+      <b>Email Address: </b>{{pic.emailaddress}}<br><br>
+      <b>Relationship to assured: </b>{{pic.relationshiptoassured}}<br><br>
+      <hr>
+     {% endfor %}
+     {% else %}
+     <p>Nothing has been posted for now</p>
+     {% endif %}
+
+           </div>
+       </div>
+   </section>
+
+
+{% endblock %}
